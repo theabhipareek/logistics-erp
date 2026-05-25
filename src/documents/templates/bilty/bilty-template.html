@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhi Road Carrier – Consignment Note</title>
+<title>Abhi Road Carrier – Consignment Note 51104</title>
 <style>
 /* Force border printing in all browsers */
 * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -292,10 +292,10 @@ body {
   font-family: Arial, sans-serif;
 }
 .ft {
-  padding: 5px 7px 5px;
+  padding: 6px 7px 7px;
   font-size: 9.5px;
   border-bottom: 1px solid #000;
-  min-height: 32px;
+  min-height: 42px;
 }
 .ft-lbl { font-weight: bold; }
 .ft input {
@@ -319,10 +319,10 @@ body {
   flex-direction: column;
 }
 .name-row {
-  padding: 5px 10px 5px;
+  padding: 6px 10px 6px;
   font-size: 9.5px;
   border-bottom: 1px solid #000;
-  min-height: 44px;
+  min-height: 58px;
   display: flex;
   flex-direction: column;
 }
@@ -353,16 +353,16 @@ body {
 }
 .rc-agent {
   border-bottom: 1px solid #000;
-  padding: 6px 8px;
+  padding: 7px 8px;
   font-size: 9.5px;
-  line-height: 1.45;
-  min-height: 44px;
+  line-height: 1.55;
+  min-height: 58px;
 }
 .rc {
   border-bottom: 1px solid #000;
-  padding: 5px 8px;
+  padding: 6px 8px;
   font-size: 9.5px;
-  min-height: 26px;
+  min-height: 32px;
 }
 .rc-gst {
   border-bottom: 1px solid #000;
@@ -410,7 +410,7 @@ body {
 .cargo-table .desc-td { text-align: left; padding-left: 7px; }
 .cargo-table .rate-td { font-weight: bold; text-align: center; border-top: none; border-bottom: none; }
 .cargo-table .rate-td.total { font-size: 11px; border-top: 1.5px solid #000; }
-.cargo-table tbody tr { height: 24px; }
+.cargo-table tbody tr { height: 32px; }
 
 .gst-panel {
   width: 220px;
@@ -424,13 +424,13 @@ body {
 .gst-title {
   font-weight: bold;
   font-size: 10px;
-  margin-bottom: 6px;
+  margin-bottom: 9px;
 }
 .cb-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-size: 10px;
 }
 .sq {
@@ -456,9 +456,9 @@ body {
 .footer {
   display: flex;
   align-items: flex-end;
-  padding: 5px 12px 5px 10px;
+  padding: 7px 12px 6px 10px;
   font-size: 10px;
-  min-height: 28px;
+  min-height: 34px;
 }
 .val-block {
   display: flex;
@@ -516,25 +516,28 @@ body {
 
   .doc {
     width: 100%;
-    max-height: 193mm;
-    overflow: hidden;
     border: 1.5px solid #000 !important;
     box-shadow: none;
-    font-size: 9.5px;
-    page-break-inside: avoid;
-    break-inside: avoid;
+    font-size: 8px;
   }
 
-  .hdr, .a1, .a2, .a3, .b1, .b2, .b3, .c12,
-  .rcol, .rc, .rc-gst, .rc-agent, .rc-last,
+  /* Force all borders to print */
+  .hdr, .hdr-left, .hdr-right,
+  .body, .a1, .a2, .a3,
+  .b1, .b2, .b3, .c12,
+  .rcol, .rc, .rc-sm, .rc-gst, .rc-agent, .rc-last,
   .name-row, .dem-title, .gstin-box, .cn-wrap,
-  .table-section, .cargo-table th, .cargo-table td,
-  .gst-panel, .sq {
+  .table-section, .cargo-table, .cargo-table th, .cargo-table td,
+  .gst-panel, .sq, .footer {
     border-color: #000 !important;
   }
 
+  /* Ensure background colors print (navy company name) */
   .company-name { color: #1a237e !important; }
   .cn-num { color: #cc0000 !important; }
+
+  /* No page breaks inside the form */
+  .doc { page-break-inside: avoid; break-inside: avoid; }
 }
 </style>
 </head>
