@@ -21,7 +21,7 @@ body {
   width: 1050px;
   background: #fff;
   border: 1.5px solid #000;
-  font-size: 9.5px;
+  font-size: 11px;
   line-height: 1.3;
   display: flex;
   flex-direction: column;
@@ -39,9 +39,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 1px solid #000;
 }
-.jurisdiction { font-size: 9.5px; text-align: center; }
+.jurisdiction { font-size: 10px; text-align: center; }
 .company-name {
   font-family: 'Arial Black', Arial, sans-serif;
   font-size: 52px; font-weight: 900; color: #1a237e;
@@ -51,25 +50,25 @@ body {
   text-align: center; font-size: 12px; font-weight: bold;
   text-decoration: underline; letter-spacing: 0.5px; margin-top: 3px;
 }
-.hdr-address { font-size: 10px; margin-top: 6px; width: 100%; }
+.hdr-address { font-size: 10.5px; margin-top: 6px; width: 100%; }
 .hdr-right {
   width: 220px; flex-shrink: 0;
   display: flex; flex-direction: column; justify-content: flex-start;
   padding: 6px 12px 6px 8px;
 }
-.hdr-contact { text-align: right; font-size: 10px; line-height: 1.85; }
-.hdr-contact .email { font-size: 9px; }
+.hdr-contact { text-align: right; font-size: 10.5px; line-height: 1.85; }
+.hdr-contact .email { font-size: 10px; }
 
 /* ══════════════════════════════════════════════════
    BODY GRID — 4 columns:
    col1 = 1fr   (Demurrage / Notice / Consignor+Consignee)
    col2 = 285px (ConsigneeCopy / Insurance)         [fixed]
-   col3 = 232px (Caution / CN+From+To)  ← matches Rate(78)+Rs(44)+Ps(36)+Charged(52) below
+   col3 = 192px (Caution / CN+From+To)  ← matches Rate(72)+Rs(90)+Ps(30) below
    col4 = 220px (Right info column)     ← matches gst-panel(220px) below
 ══════════════════════════════════════════════════ */
 .body {
   display: grid;
-  grid-template-columns: 1fr 285px 158px 220px;
+  grid-template-columns: 1fr 250px 192px 220px;
 }
 
 /* ROW A */
@@ -79,10 +78,10 @@ body {
   padding: 6px 8px;
 }
 .dem-title {
-  border: 1px solid #000; font-size: 9px; font-weight: bold;
+  border: 1px solid #000; font-size: 10px; font-weight: bold;
   text-align: center; padding: 2px 3px; margin-bottom: 7px;
 }
-.a1 p { font-size: 9px; line-height: 1.8; }
+.a1 p { font-size: 10px; line-height: 1.8; }
 
 .a2 {
   grid-column: 2; grid-row: 1;
@@ -94,7 +93,7 @@ body {
   padding: 11px 4px 10px; border-bottom: 1px solid #000; letter-spacing: 0.2px;
 }
 .at-risk {
-  font-size: 12px; font-weight: bold; text-align: center;
+  font-size: 13px; font-weight: bold; text-align: center;
   padding: 6px 4px; border-bottom: 1px solid #000;
 }
 .ins-label {
@@ -108,11 +107,11 @@ body {
   padding: 6px 6px;
 }
 .caution-title {
-  font-size: 9px; font-weight: bold; text-align: center;
+  font-size: 10px; font-weight: bold; text-align: center;
   text-decoration: underline; margin-bottom: 3px;
 }
-.a3 p { font-size: 8px; line-height: 1.5; }
-.delivery { margin-top: 6px; font-size: 8px; }
+.a3 p { font-size: 9.5px; line-height: 1.5; }
+.delivery { margin-top: 6px; font-size: 9.5px; }
 
 /* ROW B */
 .b1 {
@@ -121,30 +120,30 @@ body {
   padding: 5px 7px;
 }
 .notice-title {
-  font-size: 9.5px; font-weight: bold; text-align: center;
+  font-size: 10px; font-weight: bold; text-align: center;
   text-decoration: underline; margin-bottom: 3px;
 }
-.b1 p { font-size: 8px; line-height: 1.65; }
+.b1 p { font-size: 9.5px; line-height: 1.65; }
 
 .b2 {
   grid-column: 2; grid-row: 2;
   border-right: 1px solid #000; border-bottom: 1px solid #000;
-  padding: 6px 8px; font-size: 9px;
+  padding: 6px 8px; font-size: 10px;
 }
 .ins-stated { margin-bottom: 4px; }
-.ins-not-row { display: flex; align-items: baseline; gap: 3px; margin-bottom: 2px; font-size: 9px; }
+.ins-not-row { display: flex; align-items: baseline; gap: 3px; margin-bottom: 2px; font-size: 10px; }
 .ins-or { font-weight: bold; margin: 0 2px; }
-.ins-has { font-size: 9px; margin-bottom: 11px; }
+.ins-has { font-size: 10px; margin-bottom: 11px; }
 .irow {
   display: flex; align-items: center; padding: 5px 0 4px;
-  font-size: 9px; border-bottom: 1px solid #ddd; gap: 4px;
+  font-size: 10px; border-bottom: 1px solid #ddd; gap: 4px;
 }
 .irow:last-child { border-bottom: none; }
 .ilbl  { width: 58px; flex-shrink: 0; }
 .ilbl2 { width: 32px; flex-shrink: 0; margin-left: 4px; }
 .irow input {
   border: none; border-bottom: 1px solid #bbb; outline: none;
-  font-size: 9px; background: transparent; flex: 1;
+  font-size: 10px; background: transparent; flex: 1;
   font-family: Arial, sans-serif; min-width: 0;
 }
 
@@ -156,36 +155,35 @@ body {
 }
 .state-tel {
   display: flex; align-items: center; padding: 4px 5px;
-  border-bottom: 1px solid #000; font-size: 8.5px; gap: 3px;
+  border-bottom: 1px solid #000; font-size: 10px; gap: 3px;
 }
 .dl { flex: 1; border-bottom: 1px solid #000; min-width: 16px; align-self: flex-end; margin-bottom: 2px; }
 .gstin-box {
   margin: 4px 5px 3px; border: 1.5px solid #000; text-align: center;
-  font-weight: bold; font-size: 8.5px; padding: 4px; line-height: 1.8;
+  font-weight: bold; font-size: 10px; padding: 4px; line-height: 1.8;
 }
 .cn-wrap { border: 1.5px solid #000; margin: 3px 5px; }
 .cn-head {
-  font-size: 9px; font-weight: bold; text-align: center;
+  font-size: 10px; font-weight: bold; text-align: center;
   border-bottom: 1px solid #000; padding: 3px 3px;
 }
-.cn-no { display: flex; align-items: center; padding: 2px 5px; gap: 4px; font-size: 8.5px; }
+.cn-no { display: flex; align-items: center; padding: 2px 5px; gap: 4px; font-size: 10px; }
 .cn-num { font-size: 26px; font-weight: bold; color: #cc0000; letter-spacing: 3px; line-height: 1.15; }
 .cn-date {
   display: flex; align-items: center; padding: 3px 5px; gap: 4px;
-  font-size: 8.5px; border-top: 1px solid #000;
+  font-size: 10px; border-top: 1px solid #000;
 }
 .cn-date input {
   border: none; border-bottom: 1px solid #bbb; outline: none;
-  font-size: 8.5px; background: transparent; flex: 1; font-family: Arial, sans-serif;
+  font-size: 10px; background: transparent; flex: 1; font-family: Arial, sans-serif;
 }
-.ft { padding: 4px 5px; font-size: 8.5px; border-bottom: 1px solid #000; min-height: 36px; display: flex; flex-direction: column; }
+.ft { padding: 4px 5px; font-size: 10px; border-bottom: 1px solid #000; display: flex; flex-direction: column; flex: 1; }
 .ft-lbl { font-weight: bold; }
 .ft input {
   display: block; width: 100%; border: none; border-bottom: 1px solid #bbb;
-  outline: none; font-size: 8.5px; background: transparent;
+  outline: none; font-size: 10px; background: transparent;
   font-family: Arial, sans-serif; margin-top: 5px; flex: 1;
 }
-.ft-spacer { flex: 1; }
 
 /* ROW C — col1+col2 — Consignor + Consignee, spans both columns */
 .c12 {
@@ -196,7 +194,7 @@ body {
 
 .name-row {
   padding: 5px 10px;
-  font-size: 9.5px;
+  font-size: 10px;
   flex: 1;
   display: flex; flex-direction: column;
 }
@@ -219,12 +217,12 @@ body {
 }
 .rc-agent {
   border-bottom: 1px solid #000; padding: 6px 8px;
-  font-size: 9.5px; line-height: 1.45; min-height: 44px;
+  font-size: 10px; line-height: 1.45; min-height: 44px;
 }
-.rc { border-bottom: 1px solid #000; padding: 5px 8px; font-size: 9.5px; min-height: 26px; }
-.rc-gst { border-bottom: 1px solid #000; padding: 6px 8px 4px; font-size: 9.5px; }
-.rc-gst .gst-sub { padding-left: 10px; font-size: 9px; color: #111; line-height: 1.9; }
-.rc-last { padding: 6px 8px; font-size: 9.5px; min-height: 24px; }
+.rc { border-bottom: 1px solid #000; padding: 5px 8px; font-size: 10px; min-height: 26px; }
+.rc-gst { border-bottom: 1px solid #000; padding: 6px 8px 4px; font-size: 10px; }
+.rc-gst .gst-sub { padding-left: 10px; font-size: 10px; color: #111; line-height: 1.9; }
+.rc-last { padding: 6px 8px; font-size: 10px; min-height: 24px; }
 
 /* ══ TABLE + GST ══ */
 .table-section {
@@ -233,28 +231,29 @@ body {
   border-bottom: 1px solid #000;
 }
 .cargo-wrap { flex: 1; }
-.cargo-table { width: 100%; border-collapse: collapse; font-size: 10px; }
+.cargo-table { width: 100%; border-collapse: collapse; font-size: 11px; table-layout: fixed; }
 .cargo-table th, .cargo-table td {
   border: 1px solid #000; padding: 3px 6px; text-align: center; vertical-align: middle;
 }
 .cargo-table tbody td { border-top: none; border-bottom: none; }
-.cargo-table .desc-th, .cargo-table .desc-td { text-align: left; padding-left: 7px; }
+.cargo-table .desc-th { text-align: center; padding-left: 7px; }
+.cargo-table .desc-td { text-align: left; padding-left: 7px; }
 .cargo-table .rate-td { font-weight: bold; text-align: center; border-top: none; border-bottom: none; }
-.cargo-table .rate-td.total { font-size: 11px; border-top: 1.5px solid #000; }
+.cargo-table .rate-td.total { font-size: 12px; border-top: 1.5px solid #000; }
 .cargo-table tbody tr { height: 24px; }
 
 /* gst-panel = 220px, aligns with rcol (col4=220px) above */
 .gst-panel {
   width: 220px; flex-shrink: 0;
   border-left: 1px solid #000;
-  padding: 7px 10px; font-size: 10px;
+  padding: 7px 10px; font-size: 11px;
   display: flex; flex-direction: column;
 }
-.gst-title { font-weight: bold; font-size: 10px; margin-bottom: 6px; }
-.cb-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 10px; }
+.gst-title { font-weight: bold; font-size: 11px; margin-bottom: 6px; }
+.cb-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
 .sq { width: 11px; height: 11px; border: 1px solid #000; flex-shrink: 0; display: inline-block; }
 .remarks-title {
-  font-weight: bold; font-size: 10px; margin-top: 9px; margin-bottom: 2px;
+  font-weight: bold; font-size: 11px; margin-top: 9px; margin-bottom: 2px;
   border-top: 1px solid #000; padding-top: 7px;
 }
 .remarks-body { flex: 1; }
@@ -263,7 +262,7 @@ body {
 .footer {
   display: flex; align-items: center;
   padding: 8px 12px 8px 10px;
-  font-size: 10px; min-height: 42px;
+  font-size: 11px; min-height: 42px;
 }
 .val-block { display: flex; align-items: flex-end; gap: 6px; width: 240px; flex-shrink: 0; }
 .val-block > span:first-child { white-space: nowrap; font-weight: bold; }
@@ -272,17 +271,17 @@ body {
   flex: 1; display: flex; align-items: flex-end;
   justify-content: center; gap: 6px; padding: 0 16px;
 }
-.sig-block > span { white-space: nowrap; font-size: 10px; padding-bottom: 3px; }
+.sig-block > span { white-space: nowrap; font-size: 11px; padding-bottom: 3px; }
 .sline { flex: 1; border-bottom: 1.5px solid #000; height: 1px; min-width: 100px; margin-bottom: 3px; }
 .marathi {
   width: 230px; flex-shrink: 0; text-align: right;
-  font-size: 10.5px; font-weight: bold; line-height: 1.8; color: #000;
+  font-size: 11px; font-weight: bold; line-height: 1.8; color: #000;
   font-family: 'Noto Sans Devanagari', 'Mangal', 'Arial Unicode MS', Arial, sans-serif;
 }
 
 /* ══ PRINT — zero margin, full bleed ══ */
 @media print {
-  @page { size: A4 landscape; margin: 0; }
+  @page { size: A4 landscape; margin: 6mm; }
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
@@ -294,11 +293,17 @@ body {
     display: block !important; width: 100%;
   }
   .doc {
-    width: 100%; height: 210mm;
-    overflow: hidden; border: none !important;
-    box-shadow: none; page-break-after: auto; break-after: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    border: 1.5px solid #000 !important;
+    box-shadow: none;
+    page-break-after: avoid;
+    break-after: avoid;
+    font-size: 11px;
   }
-  .company-name { color: #1a237e !important; }
+  .company-name { color: #1a237e !important; font-size: 44px !important; }
   .cn-num { color: #cc0000 !important; }
   .marathi { color: #000 !important; }
 }
@@ -380,11 +385,11 @@ body {
   <div class="b3">
     <div class="state-tel">
       <span>State</span><span class="dl"></span>
-      <span style="margin-left:6px;">Tel.</span><span class="dl"></span>
+      <span style="margin-left:6px;">Tel. No.</span><span class="dl"></span>
     </div>
     <div class="gstin-box">
-      GSTIN : 27AISPP9734A1ZU<br>
-      PAN : AISPP9734A
+      GSTIN NO. : 27AISPP9734A1ZU<br>
+      PAN NO. : AISPP9734A
     </div>
     <div class="cn-wrap">
       <div class="cn-head">CONSIGNMENT NOTE</div>
@@ -393,7 +398,6 @@ body {
     </div>
     <div class="ft"><div class="ft-lbl">From :</div><input type="text"></div>
     <div class="ft"><div class="ft-lbl">To :</div><input type="text"></div>
-    <div class="ft-spacer"></div>
   </div>
 
   <!-- ROW C, col1+col2: Consignor + Consignee (spans both columns, no horizontal border between) -->
@@ -443,19 +447,28 @@ body {
 <div class="table-section">
   <div class="cargo-wrap">
     <table class="cargo-table">
+      <colgroup>
+        <col style="width:58px;">
+        <col>
+        <col style="width:68px;">
+        <col style="width:68px;">
+        <col style="width:72px;">
+        <col style="width:90px;">
+        <col style="width:30px;">
+      </colgroup>
       <thead>
         <tr>
-          <th rowspan="2" style="width:58px;">Packages</th>
+          <th rowspan="2">Packages</th>
           <th rowspan="2" class="desc-th">Description (Said to Contain)</th>
-          <th colspan="2" style="width:104px;">Weight</th>
-          <th rowspan="2" style="width:78px;">Rate</th>
-          <th colspan="2" style="width:80px;">Amount to Pay/Paid</th>
+          <th colspan="2">Weight</th>
+          <th rowspan="2">Rate</th>
+          <th colspan="2">Amount to Pay/Paid</th>
         </tr>
         <tr>
-          <th style="width:52px;">Actual</th>
-          <th style="width:52px;">Charged</th>
-          <th style="width:44px;">Rs.</th>
-          <th style="width:36px;">Ps.</th>
+          <th>Actual</th>
+          <th>Charged</th>
+          <th>Rs.</th>
+          <th>Ps.</th>
         </tr>
       </thead>
       <tbody>
