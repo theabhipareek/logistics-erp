@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abhi Road Carrier – Consignment Note 51104</title>
 <style>
-/* Force border printing in all browsers */
 * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -24,522 +23,288 @@ body {
   border: 1.5px solid #000;
   font-size: 9.5px;
   line-height: 1.3;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ══════════════════════════════
-   HEADER
-══════════════════════════════ */
+/* ══ HEADER ══ */
 .hdr {
   display: flex;
   align-items: stretch;
   border-bottom: 2px solid #000;
 }
-
 .hdr-left {
   flex: 1;
   padding: 6px 12px 7px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-right: 1px solid #000;
 }
-.jurisdiction {
-  font-size: 9.5px;
-  text-align: center;
-  margin-bottom: 0;
-  align-self: center;
-}
+.jurisdiction { font-size: 9.5px; text-align: center; }
 .company-name {
   font-family: 'Arial Black', Arial, sans-serif;
-  font-size: 52px;
-  font-weight: 900;
-  color: #1a237e;
-  letter-spacing: 2px;
-  line-height: 1;
-  white-space: nowrap;
-  align-self: center;
+  font-size: 52px; font-weight: 900; color: #1a237e;
+  letter-spacing: 2px; line-height: 1; white-space: nowrap;
 }
 .tagline {
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  text-decoration: underline;
-  letter-spacing: 0.5px;
-  margin-top: 3px;
-  align-self: center;
+  text-align: center; font-size: 12px; font-weight: bold;
+  text-decoration: underline; letter-spacing: 0.5px; margin-top: 3px;
 }
-.hdr-address {
-  font-size: 10px;
-  margin-top: 6px;
-  align-self: flex-start;
-}
-
-/* Right side of header */
+.hdr-address { font-size: 10px; margin-top: 6px; width: 100%; }
 .hdr-right {
-  width: 220px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  width: 220px; flex-shrink: 0;
+  display: flex; flex-direction: column; justify-content: flex-start;
   padding: 6px 12px 6px 8px;
 }
-.hdr-contact {
-  text-align: right;
-  font-size: 10px;
-  line-height: 1.85;
-}
+.hdr-contact { text-align: right; font-size: 10px; line-height: 1.85; }
 .hdr-contact .email { font-size: 9px; }
 
-/* ══════════════════════════════
-   BODY GRID
-   Cols: [265px] [285px] [1fr] [220px]
-══════════════════════════════ */
+/* ══════════════════════════════════════════════════
+   BODY GRID — 4 columns:
+   col1 = 1fr   (Demurrage / Notice / Consignor+Consignee)
+   col2 = 285px (ConsigneeCopy / Insurance)         [fixed]
+   col3 = 232px (Caution / CN+From+To)  ← matches Rate(78)+Rs(44)+Ps(36)+Charged(52) below
+   col4 = 220px (Right info column)     ← matches gst-panel(220px) below
+══════════════════════════════════════════════════ */
 .body {
   display: grid;
-  grid-template-columns: 265px 285px 1fr 220px;
+  grid-template-columns: 1fr 285px 158px 220px;
 }
 
-/* ── ROW A ── */
-
+/* ROW A */
 .a1 {
   grid-column: 1; grid-row: 1;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-right: 1px solid #000; border-bottom: 1px solid #000;
   padding: 6px 8px;
 }
 .dem-title {
-  border: 1px solid #000;
-  font-size: 9px;
-  font-weight: bold;
-  text-align: center;
-  padding: 2px 3px;
-  margin-bottom: 7px;
+  border: 1px solid #000; font-size: 9px; font-weight: bold;
+  text-align: center; padding: 2px 3px; margin-bottom: 7px;
 }
 .a1 p { font-size: 9px; line-height: 1.8; }
 
 .a2 {
   grid-column: 2; grid-row: 1;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
-  display: flex;
-  flex-direction: column;
+  border-right: 1px solid #000; border-bottom: 1px solid #000;
+  display: flex; flex-direction: column;
 }
 .cc-title {
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-  padding: 11px 4px 10px;
-  border-bottom: 1px solid #000;
-  letter-spacing: 0.2px;
+  font-size: 22px; font-weight: bold; text-align: center;
+  padding: 11px 4px 10px; border-bottom: 1px solid #000; letter-spacing: 0.2px;
 }
 .at-risk {
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-  padding: 6px 4px;
-  border-bottom: 1px solid #000;
+  font-size: 12px; font-weight: bold; text-align: center;
+  padding: 6px 4px; border-bottom: 1px solid #000;
 }
 .ins-label {
-  font-size: 17px;
-  font-weight: bold;
-  text-align: center;
-  padding: 8px 4px 7px;
+  font-size: 17px; font-weight: bold; text-align: center; padding: 8px 4px 7px;
 }
 
+/* a3 — Caution — col3, 158px */
 .a3 {
   grid-column: 3; grid-row: 1;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
-  padding: 6px 8px;
+  border-right: 1px solid #000; border-bottom: 1px solid #000;
+  padding: 6px 6px;
 }
 .caution-title {
-  font-size: 9.5px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: underline;
-  margin-bottom: 3px;
+  font-size: 9px; font-weight: bold; text-align: center;
+  text-decoration: underline; margin-bottom: 3px;
 }
-.a3 p { font-size: 9px; line-height: 1.55; }
-.delivery { margin-top: 8px; font-size: 9px; }
+.a3 p { font-size: 8px; line-height: 1.5; }
+.delivery { margin-top: 6px; font-size: 8px; }
 
-/* ── ROW B ── */
-
+/* ROW B */
 .b1 {
   grid-column: 1; grid-row: 2;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-right: 1px solid #000; border-bottom: 1px solid #000;
   padding: 5px 7px;
 }
 .notice-title {
-  font-size: 9.5px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: underline;
-  margin-bottom: 3px;
+  font-size: 9.5px; font-weight: bold; text-align: center;
+  text-decoration: underline; margin-bottom: 3px;
 }
 .b1 p { font-size: 8px; line-height: 1.65; }
 
 .b2 {
   grid-column: 2; grid-row: 2;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
-  padding: 6px 8px;
-  font-size: 9px;
+  border-right: 1px solid #000; border-bottom: 1px solid #000;
+  padding: 6px 8px; font-size: 9px;
 }
 .ins-stated { margin-bottom: 4px; }
-.ins-not-row {
-  display: flex;
-  align-items: baseline;
-  gap: 3px;
-  margin-bottom: 2px;
-  font-size: 9px;
-}
+.ins-not-row { display: flex; align-items: baseline; gap: 3px; margin-bottom: 2px; font-size: 9px; }
 .ins-or { font-weight: bold; margin: 0 2px; }
 .ins-has { font-size: 9px; margin-bottom: 11px; }
-
 .irow {
-  display: flex;
-  align-items: center;
-  padding: 5px 0 4px;
-  font-size: 9px;
-  border-bottom: 1px solid #ddd;
-  gap: 4px;
+  display: flex; align-items: center; padding: 5px 0 4px;
+  font-size: 9px; border-bottom: 1px solid #ddd; gap: 4px;
 }
 .irow:last-child { border-bottom: none; }
 .ilbl  { width: 58px; flex-shrink: 0; }
 .ilbl2 { width: 32px; flex-shrink: 0; margin-left: 4px; }
 .irow input {
-  border: none;
-  border-bottom: 1px solid #bbb;
-  outline: none;
-  font-size: 9px;
-  background: transparent;
-  flex: 1;
-  font-family: Arial, sans-serif;
-  min-width: 0;
+  border: none; border-bottom: 1px solid #bbb; outline: none;
+  font-size: 9px; background: transparent; flex: 1;
+  font-family: Arial, sans-serif; min-width: 0;
 }
 
-/* Mid col spans rows B+C */
+/* b3 — CN + From/To — col3 (158px), rows 2–3 */
 .b3 {
   grid-column: 3; grid-row: 2 / 4;
   border-right: 1px solid #000;
-  display: flex;
-  flex-direction: column;
+  display: flex; flex-direction: column;
 }
 .state-tel {
-  display: flex;
-  align-items: center;
-  padding: 5px 7px;
-  border-bottom: 1px solid #000;
-  font-size: 9px;
-  gap: 3px;
+  display: flex; align-items: center; padding: 4px 5px;
+  border-bottom: 1px solid #000; font-size: 8.5px; gap: 3px;
 }
-.dl {
-  flex: 1;
-  border-bottom: 1px solid #000;
-  min-width: 28px;
-  align-self: flex-end;
-  margin-bottom: 2px;
-}
+.dl { flex: 1; border-bottom: 1px solid #000; min-width: 16px; align-self: flex-end; margin-bottom: 2px; }
 .gstin-box {
-  margin: 5px 7px 4px;
-  border: 1.5px solid #000;
-  text-align: center;
-  font-weight: bold;
-  font-size: 10px;
-  padding: 5px;
-  line-height: 1.9;
+  margin: 4px 5px 3px; border: 1.5px solid #000; text-align: center;
+  font-weight: bold; font-size: 8.5px; padding: 4px; line-height: 1.8;
 }
-.cn-wrap {
-  border: 1.5px solid #000;
-  margin: 4px 7px;
-}
+.cn-wrap { border: 1.5px solid #000; margin: 3px 5px; }
 .cn-head {
-  font-size: 10.5px;
-  font-weight: bold;
-  text-align: center;
-  border-bottom: 1px solid #000;
-  padding: 3px 4px;
+  font-size: 9px; font-weight: bold; text-align: center;
+  border-bottom: 1px solid #000; padding: 3px 3px;
 }
-.cn-no {
-  display: flex;
-  align-items: center;
-  padding: 2px 7px;
-  gap: 5px;
-  font-size: 9.5px;
-}
-.cn-num {
-  font-size: 32px;
-  font-weight: bold;
-  color: #cc0000;
-  letter-spacing: 4px;
-  line-height: 1.15;
-}
+.cn-no { display: flex; align-items: center; padding: 2px 5px; gap: 4px; font-size: 8.5px; }
+.cn-num { font-size: 26px; font-weight: bold; color: #cc0000; letter-spacing: 3px; line-height: 1.15; }
 .cn-date {
-  display: flex;
-  align-items: center;
-  padding: 4px 7px;
-  gap: 5px;
-  font-size: 9.5px;
-  border-top: 1px solid #000;
+  display: flex; align-items: center; padding: 3px 5px; gap: 4px;
+  font-size: 8.5px; border-top: 1px solid #000;
 }
 .cn-date input {
-  border: none;
-  border-bottom: 1px solid #bbb;
-  outline: none;
-  font-size: 9.5px;
-  background: transparent;
-  flex: 1;
-  font-family: Arial, sans-serif;
+  border: none; border-bottom: 1px solid #bbb; outline: none;
+  font-size: 8.5px; background: transparent; flex: 1; font-family: Arial, sans-serif;
 }
-.ft {
-  padding: 6px 7px 7px;
-  font-size: 9.5px;
-  border-bottom: 1px solid #000;
-  min-height: 42px;
-}
+.ft { padding: 4px 5px; font-size: 8.5px; border-bottom: 1px solid #000; min-height: 36px; display: flex; flex-direction: column; }
 .ft-lbl { font-weight: bold; }
 .ft input {
-  display: block;
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #bbb;
-  outline: none;
-  font-size: 9.5px;
-  background: transparent;
-  font-family: Arial, sans-serif;
-  margin-top: 3px;
+  display: block; width: 100%; border: none; border-bottom: 1px solid #bbb;
+  outline: none; font-size: 8.5px; background: transparent;
+  font-family: Arial, sans-serif; margin-top: 5px; flex: 1;
 }
-.ft-spacer { flex: 1; min-height: 8px; }
+.ft-spacer { flex: 1; }
 
-/* ── ROW C: Name rows — cols 1+2 only ── */
+/* ROW C — col1+col2 — Consignor + Consignee, spans both columns */
 .c12 {
   grid-column: 1 / 3; grid-row: 3;
   border-right: 1px solid #000;
-  display: flex;
-  flex-direction: column;
-}
-.name-row {
-  padding: 6px 10px 6px;
-  font-size: 9.5px;
-  border-bottom: 1px solid #000;
-  min-height: 58px;
-  display: flex;
-  flex-direction: column;
-}
-.name-row:last-child { border-bottom: none; }
-.name-line {
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 16px;
-}
-.nul {
-  flex: 1;
-  border-bottom: 1px solid #000;
-  margin-left: 3px;
-  min-width: 10px;
-}
-.name-extra {
-  border-bottom: 1px solid #000;
-  height: 0;
+  display: flex; flex-direction: column;
 }
 
-/* ── RIGHT COLUMN ── */
+.name-row {
+  padding: 5px 10px;
+  font-size: 9.5px;
+  flex: 1;
+  display: flex; flex-direction: column;
+}
+.name-row + .name-row {
+  /* no border between consignor and consignee */
+}
+.name-label-line {
+  display: flex; align-items: flex-end; margin-bottom: 10px;
+}
+.nul { flex: 1; border-bottom: 1px solid #000; margin-left: 3px; min-width: 10px; }
+.wline { border-bottom: 1px solid #000; width: 100%; margin-top: 10px; }
+
+
+
+/* RIGHT COLUMN — col4, rows 1–3 */
 .rcol {
   grid-column: 4; grid-row: 1 / 4;
-  border-left: 1px solid #000;
-  border-bottom: 1px solid #000;
-  display: flex;
-  flex-direction: column;
+  border-left: 1px solid #000; border-bottom: 1px solid #000;
+  display: flex; flex-direction: column;
 }
 .rc-agent {
-  border-bottom: 1px solid #000;
-  padding: 7px 8px;
-  font-size: 9.5px;
-  line-height: 1.55;
-  min-height: 58px;
+  border-bottom: 1px solid #000; padding: 6px 8px;
+  font-size: 9.5px; line-height: 1.45; min-height: 44px;
 }
-.rc {
-  border-bottom: 1px solid #000;
-  padding: 6px 8px;
-  font-size: 9.5px;
-  min-height: 32px;
-}
-.rc-gst {
-  border-bottom: 1px solid #000;
-  padding: 6px 8px 4px;
-  font-size: 9.5px;
-}
-.rc-gst .gst-sub {
-  padding-left: 10px;
-  font-size: 9px;
-  color: #111;
-  line-height: 1.9;
-}
-.rc-last {
-  padding: 6px 8px;
-  font-size: 9.5px;
-  min-height: 24px;
-}
+.rc { border-bottom: 1px solid #000; padding: 5px 8px; font-size: 9.5px; min-height: 26px; }
+.rc-gst { border-bottom: 1px solid #000; padding: 6px 8px 4px; font-size: 9.5px; }
+.rc-gst .gst-sub { padding-left: 10px; font-size: 9px; color: #111; line-height: 1.9; }
+.rc-last { padding: 6px 8px; font-size: 9.5px; min-height: 24px; }
 
-/* ══════════════════════════════
-   TABLE + GST PANEL
-══════════════════════════════ */
+/* ══ TABLE + GST ══ */
 .table-section {
   display: flex;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
 }
 .cargo-wrap { flex: 1; }
-
-.cargo-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 10px;
-}
+.cargo-table { width: 100%; border-collapse: collapse; font-size: 10px; }
 .cargo-table th, .cargo-table td {
-  border: 1px solid #000;
-  padding: 3px 6px;
-  text-align: center;
-  vertical-align: middle;
+  border: 1px solid #000; padding: 3px 6px; text-align: center; vertical-align: middle;
 }
-.cargo-table tbody td {
-  border-top: none;
-  border-bottom: none;
-}
-.cargo-table .desc-th,
-.cargo-table .desc-td { text-align: left; padding-left: 7px; }
+.cargo-table tbody td { border-top: none; border-bottom: none; }
+.cargo-table .desc-th, .cargo-table .desc-td { text-align: left; padding-left: 7px; }
 .cargo-table .rate-td { font-weight: bold; text-align: center; border-top: none; border-bottom: none; }
 .cargo-table .rate-td.total { font-size: 11px; border-top: 1.5px solid #000; }
-.cargo-table tbody tr { height: 32px; }
+.cargo-table tbody tr { height: 24px; }
 
+/* gst-panel = 220px, aligns with rcol (col4=220px) above */
 .gst-panel {
-  width: 220px;
-  flex-shrink: 0;
+  width: 220px; flex-shrink: 0;
   border-left: 1px solid #000;
-  padding: 7px 10px;
-  font-size: 10px;
-  display: flex;
-  flex-direction: column;
+  padding: 7px 10px; font-size: 10px;
+  display: flex; flex-direction: column;
 }
-.gst-title {
-  font-weight: bold;
-  font-size: 10px;
-  margin-bottom: 9px;
-}
-.cb-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  font-size: 10px;
-}
-.sq {
-  width: 11px;
-  height: 11px;
-  border: 1px solid #000;
-  flex-shrink: 0;
-  display: inline-block;
-}
+.gst-title { font-weight: bold; font-size: 10px; margin-bottom: 6px; }
+.cb-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 10px; }
+.sq { width: 11px; height: 11px; border: 1px solid #000; flex-shrink: 0; display: inline-block; }
 .remarks-title {
-  font-weight: bold;
-  font-size: 10px;
-  margin-top: 9px;
-  margin-bottom: 2px;
-  border-top: 1px solid #000;
-  padding-top: 7px;
+  font-weight: bold; font-size: 10px; margin-top: 9px; margin-bottom: 2px;
+  border-top: 1px solid #000; padding-top: 7px;
 }
 .remarks-body { flex: 1; }
 
-/* ══════════════════════════════
-   FOOTER
-══════════════════════════════ */
+/* ══ FOOTER ══ */
 .footer {
-  display: flex;
-  align-items: flex-end;
-  padding: 7px 12px 6px 10px;
-  font-size: 10px;
-  min-height: 34px;
+  display: flex; align-items: center;
+  padding: 8px 12px 8px 10px;
+  font-size: 10px; min-height: 42px;
 }
-.val-block {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  width: 230px;
-  flex-shrink: 0;
-}
-.vline {
-  flex: 1;
-  border-bottom: 1px solid #000;
-  min-width: 120px;
-  height: 1px;
-  margin-bottom: 2px;
-}
+.val-block { display: flex; align-items: flex-end; gap: 6px; width: 240px; flex-shrink: 0; }
+.val-block > span:first-child { white-space: nowrap; font-weight: bold; }
+.vline { flex: 1; border-bottom: 1.5px solid #000; height: 1px; margin-bottom: 3px; }
 .sig-block {
-  flex: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 5px;
+  flex: 1; display: flex; align-items: flex-end;
+  justify-content: center; gap: 6px; padding: 0 16px;
 }
-.sline {
-  border-bottom: 1px solid #000;
-  width: 185px;
-  height: 1px;
-  margin-bottom: 2px;
-}
+.sig-block > span { white-space: nowrap; font-size: 10px; padding-bottom: 3px; }
+.sline { flex: 1; border-bottom: 1.5px solid #000; height: 1px; min-width: 100px; margin-bottom: 3px; }
 .marathi {
-  width: 220px;
-  text-align: right;
-  font-size: 10.5px;
-  font-weight: bold;
-  line-height: 1.8;
-  flex-shrink: 0;
+  width: 230px; flex-shrink: 0; text-align: right;
+  font-size: 10.5px; font-weight: bold; line-height: 1.8; color: #000;
+  font-family: 'Noto Sans Devanagari', 'Mangal', 'Arial Unicode MS', Arial, sans-serif;
 }
 
+/* ══ PRINT — zero margin, full bleed ══ */
 @media print {
-  @page {
-    size: A4 landscape;
-    margin: 8mm;
-  }
-
+  @page { size: A4 landscape; margin: 0; }
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     color-adjust: exact !important;
   }
-
-  body {
-    padding: 0;
-    margin: 0;
-    background: #fff;
+  html, body {
+    background: white !important;
+    padding: 0 !important; margin: 0 !important;
+    display: block !important; width: 100%;
   }
-
   .doc {
-    width: 100%;
-    border: 1.5px solid #000 !important;
-    box-shadow: none;
-    font-size: 8px;
+    width: 100%; height: 210mm;
+    overflow: hidden; border: none !important;
+    box-shadow: none; page-break-after: auto; break-after: auto;
   }
-
-  /* Force all borders to print */
-  .hdr, .hdr-left, .hdr-right,
-  .body, .a1, .a2, .a3,
-  .b1, .b2, .b3, .c12,
-  .rcol, .rc, .rc-sm, .rc-gst, .rc-agent, .rc-last,
-  .name-row, .dem-title, .gstin-box, .cn-wrap,
-  .table-section, .cargo-table, .cargo-table th, .cargo-table td,
-  .gst-panel, .sq, .footer {
-    border-color: #000 !important;
-  }
-
-  /* Ensure background colors print (navy company name) */
   .company-name { color: #1a237e !important; }
   .cn-num { color: #cc0000 !important; }
-
-  /* No page breaks inside the form */
-  .doc { page-break-inside: avoid; break-inside: avoid; }
+  .marathi { color: #000 !important; }
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="doc">
@@ -550,21 +315,21 @@ body {
     <div class="jurisdiction">Subject to Nashik Jurisdiction</div>
     <div class="company-name">ABHI ROAD CARRIER</div>
     <div class="tagline">FLEET OWNERS &amp; TRANSPORT CONTRACTOR</div>
-    <div class="hdr-address" style="width:100%;">Nivrutti Complex, A-Wing, Shop No. 37, Mumbai Agra Road, Dwarka, Nashik - 422 001. Maharashtra</div>
+    <div class="hdr-address">Nivrutti Complex, A-Wing, Shop No. 37, Mumbai Agra Road, Dwarka, Nashik - 422 001. Maharashtra</div>
   </div>
   <div class="hdr-right">
     <div class="hdr-contact">
       <div><strong>Ph. : 0253 - 2597133</strong></div>
       <div><strong>Cell. : 09373535944</strong></div>
-      <div class="email">Email : - abhiroadcarrier@gmail.com</div>
+      <div class="email">Email : abhiroadcarrier@gmail.com</div>
     </div>
   </div>
 </div>
 
-<!-- BODY GRID -->
+<!-- BODY GRID: 1fr | 285px | 158px | 220px -->
 <div class="body">
 
-  <!-- A1 -->
+  <!-- ROW A, col1: Demurrage -->
   <div class="a1">
     <div class="dem-title">SCHEDULE OF DEMURRAGE CHARGES</div>
     <p>Demurrage Chargeable after __________</p>
@@ -572,27 +337,27 @@ body {
     <p>day per Qty. on weight charged.</p>
   </div>
 
-  <!-- A2 -->
+  <!-- ROW A, col2: Consignee Copy -->
   <div class="a2">
     <div class="cc-title">CONSIGNEE COPY</div>
     <div class="at-risk">AT OWNER'S RISK</div>
     <div class="ins-label">INSURANCE</div>
   </div>
 
-  <!-- A3: Caution -->
+  <!-- ROW A, col3: Caution (158px) -->
   <div class="a3">
     <div class="caution-title">CAUTION</div>
-    <p>This Consignment will not be detained diverted, re-routed or re-booked without consignee Bank's written Permission. Will be delivered at the destination .</p>
+    <p>This Consignment will not be detained diverted, re-routed or re-booked without consignee Bank's written Permission. Will be delivered at the destination.</p>
     <p class="delivery">Address of Delivery Office :</p>
   </div>
 
-  <!-- B1: Notice -->
+  <!-- ROW B, col1: Notice -->
   <div class="b1">
     <div class="notice-title">NOTICE</div>
     <p>The Consignment Covered by this Lorry receipt shall be stored at the destination under the control of the transport operator and shall be delivered to or to the order of the Consignee Bank whose name is mentioned in the Lorry Receipt. It will under no circumstance be delivered to any one without the written authority from the Consignee Bank or its order, endorsed on the Consignee copy.</p>
   </div>
 
-  <!-- B2: Insurance body -->
+  <!-- ROW B, col2: Insurance -->
   <div class="b2">
     <p class="ins-stated">The Consignor has stated that :</p>
     <div class="ins-not-row">
@@ -600,77 +365,62 @@ body {
       <span class="ins-or">or</span>
     </div>
     <p class="ins-has">He has insured the Consignment</p>
+    <div class="irow"><span class="ilbl">Company</span><input type="text"></div>
     <div class="irow">
-      <span class="ilbl">Company</span>
-      <input type="text">
+      <span class="ilbl">Policy No.</span><input type="text">
+      <span class="ilbl2">Date :</span><input type="text">
     </div>
     <div class="irow">
-      <span class="ilbl">Policy No.</span>
-      <input type="text">
-      <span class="ilbl2">Date :</span>
-      <input type="text">
-    </div>
-    <div class="irow">
-      <span class="ilbl">Amount</span>
-      <input type="text">
-      <span class="ilbl2">Risk :</span>
-      <input type="text">
+      <span class="ilbl">Amount</span><input type="text">
+      <span class="ilbl2">Risk :</span><input type="text">
     </div>
   </div>
 
-  <!-- B3+C3: Mid col spanning rows 2–3 -->
+  <!-- ROW B+C, col3: CN + From/To (spans rows 2–3) -->
   <div class="b3">
     <div class="state-tel">
-      <span>State</span>
-      <span class="dl"></span>
-      <span style="margin-left:8px;">Tel. No.</span>
-      <span class="dl"></span>
+      <span>State</span><span class="dl"></span>
+      <span style="margin-left:6px;">Tel.</span><span class="dl"></span>
     </div>
     <div class="gstin-box">
-      GSTIN NO. : 27AISPP9734A1ZU<br>
-      PAN NO. : AISPP9734A
+      GSTIN : 27AISPP9734A1ZU<br>
+      PAN : AISPP9734A
     </div>
     <div class="cn-wrap">
       <div class="cn-head">CONSIGNMENT NOTE</div>
-      <div class="cn-no">
-        <span>No.</span>
-        <span class="cn-num">51104</span>
-      </div>
-      <div class="cn-date">
-        <span>Date :</span>
-        <input type="text">
-      </div>
+      <div class="cn-no"><span>No.</span><span class="cn-num">51104</span></div>
+      <div class="cn-date"><span>Date :</span><input type="text"></div>
     </div>
-    <div class="ft">
-      <div class="ft-lbl">From :</div>
-      <input type="text">
-    </div>
-    <div class="ft">
-      <div class="ft-lbl">To :</div>
-      <input type="text">
-    </div>
+    <div class="ft"><div class="ft-lbl">From :</div><input type="text"></div>
+    <div class="ft"><div class="ft-lbl">To :</div><input type="text"></div>
     <div class="ft-spacer"></div>
   </div>
 
-  <!-- C1+C2: Name rows -->
+  <!-- ROW C, col1+col2: Consignor + Consignee (spans both columns, no horizontal border between) -->
   <div class="c12">
     <div class="name-row">
-      <div class="name-line">
+      <div class="name-label-line">
         <span>Consignor's Name &amp; Address</span>
         <span class="nul">&nbsp;</span>
       </div>
-      <div class="name-extra"></div>
+      <div class="wline"></div>
+      <div class="wline"></div>
+      <div class="wline"></div>
     </div>
     <div class="name-row">
-      <div class="name-line">
+      <div class="name-label-line">
         <span>Consignee Bank's Name &amp; Address</span>
         <span class="nul">&nbsp;</span>
       </div>
-      <div class="name-extra"></div>
+      <div class="wline"></div>
+      <div class="wline"></div>
+      <div class="wline"></div>
     </div>
   </div>
 
-  <!-- RIGHT COLUMN: all 3 rows, starts with agent label -->
+
+
+  <!-- RIGHT COLUMN col4, rows 1–3 -->
   <div class="rcol">
     <div class="rc-agent">Address of issuing Officer or<br>Name &amp; Address of Agent</div>
     <div class="rc">Lorry No. :</div>
@@ -689,14 +439,14 @@ body {
 
 </div><!-- /body -->
 
-<!-- TABLE + GST -->
+<!-- TABLE + GST PANEL -->
 <div class="table-section">
   <div class="cargo-wrap">
     <table class="cargo-table">
       <thead>
         <tr>
           <th rowspan="2" style="width:58px;">Packages</th>
-          <th rowspan="2" class="desc-th">Description (Said to Contain )</th>
+          <th rowspan="2" class="desc-th">Description (Said to Contain)</th>
           <th colspan="2" style="width:104px;">Weight</th>
           <th rowspan="2" style="width:78px;">Rate</th>
           <th colspan="2" style="width:80px;">Amount to Pay/Paid</th>
@@ -714,7 +464,9 @@ body {
           <td rowspan="6" class="desc-td" style="vertical-align:top;border-bottom:none;"></td>
           <td rowspan="6" style="vertical-align:top;border-bottom:none;"></td>
           <td rowspan="6" style="vertical-align:top;border-bottom:none;"></td>
-          <td class="rate-td">Freight</td><td rowspan="6" style="vertical-align:top;border-bottom:none;"></td><td rowspan="6" style="vertical-align:top;border-bottom:none;"></td>
+          <td class="rate-td">Freight</td>
+          <td rowspan="6" style="vertical-align:top;border-bottom:none;"></td>
+          <td rowspan="6" style="vertical-align:top;border-bottom:none;"></td>
         </tr>
         <tr><td class="rate-td">Hamali</td></tr>
         <tr><td class="rate-td">Risk Ch.</td></tr>
@@ -724,6 +476,7 @@ body {
       </tbody>
     </table>
   </div>
+  <!-- gst-panel = 220px → aligns exactly with rcol (col4=220px) above -->
   <div class="gst-panel">
     <div class="gst-title">GST Tax will be paid by</div>
     <div class="cb-row"><span class="sq"></span> Consignor</div>
@@ -737,10 +490,11 @@ body {
 <!-- FOOTER -->
 <div class="footer">
   <div class="val-block">
-    <span>Value</span>
+    <span>Value Rs.</span>
     <span class="vline"></span>
   </div>
   <div class="sig-block">
+    <span class="sline"></span>
     <span>Signature of the Transport Operator</span>
     <span class="sline"></span>
   </div>
@@ -750,6 +504,6 @@ body {
   </div>
 </div>
 
-</div>
+</div><!-- /doc -->
 </body>
 </html>
